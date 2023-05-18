@@ -8,5 +8,5 @@ See the [pricing](https://www.microsoft.com/en-us/bing/apis/pricing) and click [
 
 Once the deployment is complete you can go to the resource and get the keys and the endpoint url.
 
-The constant.py is not included which has the sunscription keey. endpoint url and input and output file names
+The config.py is not included which has the sunscription keey. endpoint url and input and output file names
 The data_extract.py will read the input comma separted keywords text file and call the api for each keyword and write the webpagees ressult in a csv file.
