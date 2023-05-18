@@ -5,7 +5,7 @@
 .DS_Store
 
 # Configuration File
-constants.py
+config.py
 
 #otherfiles
 results/*.html
