@@ -6,3 +6,6 @@
 
 # Configuration File
 constants.py
+
+#otherfiles
+*.html
