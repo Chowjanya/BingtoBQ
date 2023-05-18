@@ -8,4 +8,5 @@
 constants.py
 
 #otherfiles
-*.html
+*/*.html
+__pycache__
