@@ -10,3 +10,17 @@ Once the deployment is complete you can go to the resource and get the keys and 
 
 The config.py is not included which has the sunscription keey. endpoint url and input and output file names
 The data_extract.py will read the input comma separted keywords text file and call the api for each keyword and write the webpagees ressult in a csv file.
+
+## BigQuery PRoject Table Creation
+
+I used BigQuery Sandbox to create a project,dataset and a table on Google Cloud.
+
+Then Added the table schema for the table.
+
+![step2](./Images/BQTableschema.png)
+
+Updated my data_extract python script to load the pandas dataframe to Bigquerytable after installing goole cloud sdk, google-cloud-bigquery package and pyarrow package.
+
+![step2](./Images/BQQueryResult.png)
+
+

@@ -1,10 +1,13 @@
 import config as const
 import json
-from pprint import pprint
+
 import pandas as pd
 from pandas import json_normalize
 from datetime import date
 import requests
+
+from google.cloud import bigquery
+
 
 subscription_key = const.subscription_key
 endpoint = const.bing_endpoint + "v7.0/search"
@@ -49,4 +52,19 @@ for query in keywords_list:
         raise ex
 result.to_csv(const.output_file,index=False)
         
+#https://cloud.google.com/bigquery/docs/samples/bigquery-load-table-dataframe
+# Construct a BigQuery client object.
+client = bigquery.Client()
+table_id = "bingtobq.BingSearch.results"
 
+job_config = bigquery.LoadJobConfig()
+
+#API Request
+job = client.load_table_from_dataframe(result, table_id, job_config=job_config)
+
+job.result() 
+
+#API Request
+table = client.get_table(table_id)
+
+print("Loaded {} rows and {} columns to {}".format(table.num_rows, len(table.schema), table_id))
